@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TechSphere Blog</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                TechSphere
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <button id="darkModeBtn">🌙</button>
+
+        </nav>
+
+    </header>
+
+
+    <!-- Home -->
+
+    <main id="home">
+
+        <!-- Featured Article -->
+
+        <section class="featured">
+
+            <div class="featured-content">
+
+                <span class="tag">FEATURED</span>
+
+                <h1>
+                    The Future of Technology:
+                    Trends Every Student Should Know
+                </h1>
+
+                <p>
+                    Explore the latest technology trends and discover
+                    how they are shaping the future of education,
+                    careers and everyday life.
+                </p>
+
+                <button onclick="showArticle(0)">
+                    Read More
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Search -->
+
+        <section class="search-section">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search articles..."
+                onkeyup="searchArticles()"
+            >
+
+        </section>
+
+
+        <!-- Categories -->
+
+        <section id="categories">
+
+            <h2>Categories</h2>
+
+            <div class="category-buttons">
+
+                <button onclick="filterCategory('All')">
+                    All
+                </button>
+
+                <button onclick="filterCategory('Technology')">
+                    Technology
+                </button>
+
+                <button onclick="filterCategory('Programming')">
+                    Programming
+                </button>
+
+                <button onclick="filterCategory('Career')">
+                    Career
+                </button>
+
+                <button onclick="filterCategory('AI')">
+                    AI & ML
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Blog Posts -->
+
+        <section class="posts">
+
+            <h2>Latest Articles</h2>
+
+            <div id="blogContainer" class="blog-container">
+            </div>
+
+            <button
+                id="loadMoreBtn"
+                class="load-more"
+                onclick="loadMore()">
+
+                Load More
+
+            </button>
+
+        </section>
+
+
+        <!-- About -->
+
+        <section id="about" class="about">
+
+            <h2>About TechSphere</h2>
+
+            <p>
+                TechSphere is a student-focused technology blog
+                where readers can explore programming, technology,
+                artificial intelligence and career-related topics.
+            </p>
+
+        </section>
+
+
+        <!-- Contact -->
+
+        <section id="contact" class="contact">
+
+            <h2>Contact Us</h2>
+
+            <form onsubmit="submitContact(event)">
+
+                <input
+                    type="text"
+                    placeholder="Your Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    placeholder="Your Email"
+                    required
+                >
+
+                <textarea
+                    placeholder="Your Message"
+                    required>
+                </textarea>
+
+                <button type="submit">
+                    Send Message
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <h3>TechSphere</h3>
+
+        <p>
+            Learn. Explore. Grow.
+        </p>
+
+        <p>
+            © 2026 TechSphere. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- Article Modal -->
+
+    <div id="articleModal" class="modal">
+
+        <div class="modal-content">
+
+            <span
+                class="close"
+                onclick="closeArticle()">
+                &times;
+            </span>
+
+            <h2 id="articleTitle"></h2>
+
+            <p id="articleContent"></p>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
